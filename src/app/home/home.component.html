@@ -1,0 +1,57 @@
+<div class="container">
+    <!--
+    <div>
+        <input [(ngModel)]="term" type="text" class="form-control my-5 w-50 " placeholder="serch here">
+
+    </div>
+-->
+    <div class="row my-3">
+        <div class="col-md-4 pt-5">
+
+            <div class="brdr w-25 my-3"></div>
+            <h2>
+                trending <br> movies <br> to watch now
+            </h2>
+            <div class="brdr w-100 my-3"></div>
+        </div>
+        <div [routerLink]="['/movie-details', Movie.media_type , Movie.id ]" *ngFor='let Movie of GetMovies|search:term' class="col-md-2">
+            <div class="movie mt-4 position-relative">
+                <img class="img-fluid" [src]='imgSrc+Movie?.poster_path' alt="movies">
+                <h3 class="h6 my-2">{{Movie?.title}} {{Movie?.name}}</h3>
+                <div class="vote">{{Movie?.vote_average}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-md-4 pt-5">
+            <div class="brdr w-25 my-3"></div>
+            <h2>
+                trending <br> tv Shows <br> to watch now
+            </h2>
+            <div class="brdr w-100 my-3"></div>
+        </div>
+        <div [routerLink]="['/movie-details', tv.media_type , tv.id ]" *ngFor='let tv of GetTv' class="col-md-2">
+            <div class="movie mt-4 position-relative">
+                <img class="img-fluid" [src]='imgSrc+tv?.poster_path' alt="movies">
+                <h3 class="h6 my-2">{{tv?.title}} {{tv?.name}}</h3>
+                <div class="vote">{{tv?.vote_average}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-md-4 pt-5">
+            <div class="brdr w-25 my-3"></div>
+            <h2>
+                All trendings <br> per week <br> right now
+            </h2>
+            <div class="brdr w-100 my-3"></div>
+        </div>
+        <div [routerLink]="['/movie-details', All.media_type , All.id ]" *ngFor='let All of GetAll' class="col-md-2">
+            <div class="movie mt-4 position-relative">
+                <img class="img-fluid" [src]='imgSrc+All?.poster_path' alt="movies">
+                <h3 class="h6 my-2">{{All?.title}} {{All?.name}}</h3>
+                <div class="vote">{{All?.popularity}}</div>
+            </div>
+        </div>
+    </div>
+</div>

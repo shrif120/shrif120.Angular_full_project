@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row my-3">
+        <div *ngFor='let PEOPLE of people' class="col-md-2 mt-4 position-relative">
+            <img class="img-fluid" [src]="imgSrc + PEOPLE.profile_path" alt="movie">
+            <h3 class="h6 my-3">{{PEOPLE.title}} {{PEOPLE.name}}</h3>
+            <h4 class="text-danger">{{PEOPLE.known_for_department}}</h4>
+            <div class="vote">{{PEOPLE.popularity}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<form [formGroup]='registerForm' (ngSubmit)='getFormsInformations(registerForm)' class="w-50 m-auto pt-5 pb-5">
+    <div class="form-group">
+        <label>first Name</label>
+        <input [class.is-valid]='registerForm.get("first_name").errors == null && registerForm.get("first_name").touched' formControlName='first_name' type="text" class="form-control" placeholder="first Name must start with 3 to 8 letter">
+        <div *ngIf='registerForm.get("first_name").errors != null && registerForm.get("first_name").touched' class="alert alert-danger mt-2">
+            first Name is not valid
+        </div>
+    </div>
+    <div class="form-group">
+        <label>last Name</label>
+        <input [class.is-valid]='registerForm.get("last_name").errors == null && registerForm.get("last_name").touched' formControlName='last_name' type="text" class="form-control" placeholder="last Name must start with 3 to 8 letter">
+        <div *ngIf='registerForm.get("last_name").errors != null && registerForm.get("last_name").touched' class="alert alert-danger mt-2">
+            last Name is not valid
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email address</label>
+        <input [class.is-valid]='registerForm.get("email").errors == null && registerForm.get("email").touched' formControlName='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div *ngIf='registerForm.get("email").errors != null && registerForm.get("email").touched ' class="alert alert-danger mt-2">
+            email is not valid
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input [class.is-valid]='registerForm.get("password").errors == null  && registerForm.get("password").touched' formControlName='password' type="password" class="form-control" placeholder="must start with capital letter">
+        <div *ngIf='registerForm.get("password").errors != null && registerForm.get("password").touched' class="alert alert-danger mt-2">
+            password is not valid
+        </div>
+    </div>
+    <button [disabled]='registerForm.invalid' type="submit" class="btn btn-primary">register</button>
+
+    <div class="alert alert-warning mt-3" *ngIf='flag'>
+        <p> this Email is already registerd</p>
+    </div>
+
+</form>

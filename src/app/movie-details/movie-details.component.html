@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-4">
+        <img class="img-fluid" [src]="imgSrc+movieDetails?.poster_path" alt="poster">
+    </div>
+    <div class="col-md-8">
+        <div>
+            <h2 class="mt-4 mb-4">
+                {{movieDetails?.title}} {{movieDetails?.name}}
+            </h2>
+            <p class="text-muted mb-5">{{movieDetails?.tagline}}</p>
+            <span class="bg-info mx-4 py-2 px-3 rounded" *ngFor='let gen of movieDetails?.genres'>{{gen.name}}</span>
+            <p class="mt-5 text-warning">vote average : <span class="text-white"> {{movieDetails?.vote_average}}</span></p>
+            <p class="mt-2 text-warning">vote count : <span class="text-white"> {{movieDetails?.vote_count}} </span></p>
+            <p class="mt-2 text-warning">popularity : <span class="text-white">{{movieDetails?.popularity}} </span></p>
+            <p class="mt-2 text-warning">release date : <span class="text-white">{{movieDetails?.release_date}} </span></p>
+            <p class="mt-2 text-warning">origin country : <span class="text-white">{{movieDetails?.origin_country}} </span></p>
+            <p class="mt-2 text-warning">revenue : <span class="text-white">{{movieDetails?.revenue}} </span></p>
+            <p class="mt-5 lead">{{movieDetails?.overview}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row my-3">
+        <div *ngFor='let tvshow of tvShows' class="col-md-2 mt-4 position-relative">
+            <img class="img-fluid" [src]="imgSrc + tvshow.poster_path" alt="movie">
+            <h3 class="h6 my-3">{{tvshow.title}} {{tvshow.name}}</h3>
+            <div class="vote">{{tvshow.vote_average}}</div>
+        </div>
+    </div>
+</div>
